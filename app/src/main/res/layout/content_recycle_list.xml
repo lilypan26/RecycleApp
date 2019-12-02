@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".RecycleList"
+    tools:showIn="@layout/activity_recycle_list">
+
+    <LinearLayout
+        android:id="@+id/materials"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="visible">
+
+        <TextView
+            android:id="@+id/choose"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Choose a material:"
+            android:textSize="22dp" />
+
+        <Button
+            android:id="@+id/paper"
+            android:layout_width="146dp"
+            android:layout_height="98dp"
+            android:text='"Paper"'
+            android:textSize="22dp"
+            android:gravity="center"
+            android:visibility="visible" />
+
+        <Button
+            android:id="@+id/glass"
+            android:layout_width="142dp"
+            android:layout_height="94dp"
+            android:gravity="center"
+            android:text="Glass"
+            android:textSize="22dp"
+            android:visibility="visible" />
+
+        <Button
+            android:id="@+id/metal"
+            android:layout_width="146dp"
+            android:layout_height="111dp"
+            android:text='"Metal"'
+            android:textSize="22dp"
+            android:gravity="center"
+            android:visibility="visible" />
+
+        <Button
+            android:id="@+id/plastic"
+            android:layout_width="146dp"
+            android:layout_height="98dp"
+            android:gravity="center"
+            android:text="Plastic"
+            android:textSize="22dp"
+            android:visibility="visible" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

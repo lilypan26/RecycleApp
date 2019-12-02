@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">CS125FinalProject</string>
+    <string name="title_activity_ui">UI</string>
+    <string name="title_activity_recycle_list">RecycleList</string>
+</resources>
