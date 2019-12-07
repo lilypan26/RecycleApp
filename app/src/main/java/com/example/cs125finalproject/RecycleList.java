@@ -1,5 +1,6 @@
 package com.example.cs125finalproject;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -10,6 +11,8 @@ import androidx.appcompat.widget.Toolbar;
 
 import android.view.View;
 import android.widget.Button;
+
+import static android.view.View.GONE;
 
 public class RecycleList extends AppCompatActivity {
 
@@ -22,11 +25,13 @@ public class RecycleList extends AppCompatActivity {
         Button paper = findViewById(R.id.paper);
         paper.setOnClickListener(unused -> paper());
         Button plastic = findViewById(R.id.plastic);
-        paper.setOnClickListener(unused -> plastic());
+        plastic.setOnClickListener(unused -> plastic());
         Button metal = findViewById(R.id.metal);
-        paper.setOnClickListener(unused -> metal());
+        metal.setOnClickListener(unused -> metal());
         Button glass = findViewById(R.id.glass);
-        paper.setOnClickListener(unused -> glass());
+        glass.setOnClickListener(unused -> glass());
+        Button home = findViewById(R.id.home);
+        home.setOnClickListener(unused -> onClick());
 
         FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -38,7 +43,7 @@ public class RecycleList extends AppCompatActivity {
         });
     }
     public void paper() {
-
+        startActivity(new Intent(this, Paper.class));
     }
     public void metal() {
 
@@ -48,5 +53,8 @@ public class RecycleList extends AppCompatActivity {
     }
     public void plastic() {
 
+    }
+    protected void onClick() {
+        startActivity(new Intent(this, UI.class));
     }
 }
