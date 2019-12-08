@@ -32,7 +32,7 @@ public class RecycleList extends AppCompatActivity {
         glass.setOnClickListener(unused -> glass());
         Button home = findViewById(R.id.home);
         home.setOnClickListener(unused -> onClick());
-
+/*
         FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -41,6 +41,8 @@ public class RecycleList extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+
+ */
     }
     public void paper() {
         startActivity(new Intent(this, Paper.class));
@@ -49,7 +51,7 @@ public class RecycleList extends AppCompatActivity {
 
     }
     public void glass() {
-
+        startActivity(new Intent(this, Glass.class));
     }
     public void plastic() {
 

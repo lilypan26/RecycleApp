@@ -11,9 +11,10 @@ import androidx.appcompat.widget.Toolbar;
 
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 public class UI extends AppCompatActivity {
-
+    boolean b = false;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,7 +25,12 @@ public class UI extends AppCompatActivity {
         stats.setOnClickListener(unused -> stats());
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
+        TextView congrats = findViewById(R.id.congrats);
+        congrats.setVisibility(View.VISIBLE);
+        if (b) {
+            congrats.setVisibility(View.GONE);
+        }
+        /*
         FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -33,11 +39,17 @@ public class UI extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+
+         */
     }
 
     protected void onClick() {
         startActivity(new Intent(this, RecycleList.class));
     }
     protected void stats() {
+        startActivity(new Intent(this, Statistics.class));
+    }
+    protected void showMessage() {
+        b = true;
     }
 }

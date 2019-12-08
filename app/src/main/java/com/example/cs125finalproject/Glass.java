@@ -15,12 +15,12 @@ import android.widget.CompoundButton;
 import android.widget.Switch;
 import android.widget.TextView;
 
-public class Paper extends AppCompatActivity {
+public class Glass extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_paper);
+        setContentView(R.layout.activity_glass);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         TextView isRecyclable = findViewById(R.id.recyclable);
@@ -31,9 +31,9 @@ public class Paper extends AppCompatActivity {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
                 if (b) {
-                    isRecyclable.setVisibility(View.VISIBLE);
-                } else {
                     isRecyclable.setVisibility(View.GONE);
+                } else {
+                    isRecyclable.setVisibility(View.VISIBLE);
                 }
             }
         });
@@ -59,7 +59,7 @@ public class Paper extends AppCompatActivity {
                 }
             }
         });
-        /*
+/*
         FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -68,7 +68,8 @@ public class Paper extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
-        */
+
+ */
     }
     protected void show() {
         UI ui = new UI();
@@ -78,5 +79,4 @@ public class Paper extends AppCompatActivity {
         startActivity(new Intent(this, UI.class));
 
     }
-
 }
