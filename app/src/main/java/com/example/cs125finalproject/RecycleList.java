@@ -68,7 +68,7 @@ public class RecycleList extends AppCompatActivity {
         startActivity(new Intent(this, Paper.class));
     }
     public void metal() {
-
+        startActivity(new Intent(this, Metal.class));
     }
     public void glass() {
 
@@ -98,6 +98,7 @@ public class RecycleList extends AppCompatActivity {
             isRecyclable.setVisibility(View.VISIBLE);
         } catch (IOException e) {
             Log.e("IOException", e.getMessage());
+
         }
     }
 }
