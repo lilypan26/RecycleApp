@@ -2,62 +2,124 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/materials"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#9AEB9D"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".RecycleList"
     tools:showIn="@layout/activity_recycle_list">
 
-    <LinearLayout
-        android:id="@+id/materials"
+    <EditText
+        android:id="@+id/searchBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="6dp"
+        android:layout_marginLeft="6dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Search Common Items:"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/choose"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:visibility="visible">
+        android:layout_height="wrap_content"
+        android:layout_marginTop="90dp"
+        android:gravity="center"
+        android:text="Choose a material:"
+        android:textSize="22dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/searchBar" />
 
-        <TextView
-            android:id="@+id/choose"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="Choose a material:"
-            android:textSize="22dp" />
+    <Button
+        android:id="@+id/paper"
+        android:layout_width="146dp"
+        android:layout_height="98dp"
+        android:layout_marginStart="200dp"
+        android:layout_marginLeft="200dp"
+        android:layout_marginTop="350dp"
+        android:gravity="center"
+        android:text="Paper"
+        android:textSize="22dp"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.292"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <Button
-            android:id="@+id/paper"
-            android:layout_width="146dp"
-            android:layout_height="98dp"
-            android:text='"Paper"'
-            android:textSize="22dp"
-            android:gravity="center"
-            android:visibility="visible" />
+    <Button
+        android:id="@+id/glass"
+        android:layout_width="146dp"
+        android:layout_height="98dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="350dp"
+        android:gravity="center"
+        android:text="Glass"
+        android:textSize="22dp"
+        android:visibility="visible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <Button
-            android:id="@+id/glass"
-            android:layout_width="142dp"
-            android:layout_height="94dp"
-            android:gravity="center"
-            android:text="Glass"
-            android:textSize="22dp"
-            android:visibility="visible" />
+    <Button
+        android:id="@+id/metal"
+        android:layout_width="146dp"
+        android:layout_height="98dp"
+        android:layout_marginStart="200dp"
+        android:layout_marginLeft="200dp"
+        android:layout_marginTop="200dp"
+        android:gravity="center"
+        android:text="Metal"
+        android:textSize="22dp"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.292"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <Button
-            android:id="@+id/metal"
-            android:layout_width="146dp"
-            android:layout_height="111dp"
-            android:text='"Metal"'
-            android:textSize="22dp"
-            android:gravity="center"
-            android:visibility="visible" />
+    <Button
+        android:id="@+id/plastic"
+        android:layout_width="146dp"
+        android:layout_height="98dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="200dp"
+        android:gravity="center"
+        android:text="Plastic"
+        android:textSize="22dp"
+        android:visibility="visible"
+        app:layout_constraintEnd_toStartOf="@+id/metal"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <Button
-            android:id="@+id/plastic"
-            android:layout_width="146dp"
-            android:layout_height="98dp"
-            android:gravity="center"
-            android:text="Plastic"
-            android:textSize="22dp"
-            android:visibility="visible" />
-    </LinearLayout>
+    <Button
+        android:id="@+id/home"
+        android:layout_width="136dp"
+        android:layout_height="71dp"
+        android:layout_marginStart="237dp"
+        android:layout_marginLeft="237dp"
+        android:layout_marginEnd="38dp"
+        android:layout_marginRight="38dp"
+        android:layout_marginBottom="39dp"
+        android:text="Home"
+        android:textSize="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/paper"
+        app:layout_constraintVertical_bias="0.7" />
+
+    <Button
+        android:id="@+id/searchButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Search"
+        tools:layout_editor_absoluteX="277dp"
+        tools:layout_editor_absoluteY="0dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

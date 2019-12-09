@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".Metal"
+    tools:showIn="@layout/activity_metal">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <Switch
+            android:id="@+id/foodResidue"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Metal Has Food Residue" />
+
+        <Switch
+            android:id="@+id/switch4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="ElectronicProduct" />
+
+        <RadioGroup
+            android:id="@+id/metalType"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <TextView
+                android:id="@+id/metalText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Type of Metal" />
+
+            <RadioButton
+                android:id="@+id/aluminum"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Aluminum" />
+
+            <RadioButton
+                android:id="@+id/brass"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Brass/Bronze" />
+
+            <RadioButton
+                android:id="@+id/iron"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Iron" />
+
+            <RadioButton
+                android:id="@+id/lead"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Lead" />
+
+            <RadioButton
+                android:id="@+id/copper"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Copper" />
+
+            <RadioButton
+                android:id="@+id/mercury"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Mercury" />
+
+            <RadioButton
+                android:id="@+id/steel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Steel" />
+
+            <RadioButton
+                android:id="@+id/tin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Tin" />
+
+            <TextView
+                android:id="@+id/isRecyclable"
+                android:layout_width="match_parent"
+                android:layout_height="349dp"
+                android:textSize="45dp"
+                android:gravity="center"
+                android:text="Recyclable" />
+
+        </RadioGroup>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

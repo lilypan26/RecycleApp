@@ -10,9 +10,15 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".Metal"
+            android:label="@string/title_activity_metal"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name=".Plastic" />
+        <activity android:name=".Paper" />
+        <activity
             android:name=".RecycleList"
             android:label="@string/title_activity_recycle_list"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".UI"
             android:label="@string/title_activity_ui"

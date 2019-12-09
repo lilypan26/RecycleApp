@@ -1,6 +1,5 @@
 package com.example.cs125finalproject;
 
-import android.content.Intent;
 import android.os.Bundle;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -10,22 +9,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.view.View;
-import android.widget.Button;
 
-public class UI extends AppCompatActivity {
+public class Metal extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_ui);
-        Button list = findViewById(R.id.enter);
-
-        list.setOnClickListener(unused -> onClick());
-        Button stats = findViewById(R.id.statsButton);
-
-        stats.setOnClickListener(unused -> stats());
+        setContentView(R.layout.activity_metal);
         Toolbar toolbar = findViewById(R.id.toolbar);
-
         setSupportActionBar(toolbar);
 
         FloatingActionButton fab = findViewById(R.id.fab);
@@ -38,10 +29,4 @@ public class UI extends AppCompatActivity {
         });
     }
 
-    protected void onClick() {
-        startActivity(new Intent(this, RecycleList.class));
-    }
-    protected void stats() {
-
-    }
 }

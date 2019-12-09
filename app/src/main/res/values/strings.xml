@@ -2,4 +2,5 @@
     <string name="app_name">CS125FinalProject</string>
     <string name="title_activity_ui">UI</string>
     <string name="title_activity_recycle_list">RecycleList</string>
+    <string name="title_activity_metal">Metal</string>
 </resources>
