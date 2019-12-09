@@ -82,10 +82,6 @@ public class RecycleList extends AppCompatActivity {
         String arg = searchBar.getText().toString();
         arg.replace(" ", "+");
 
-        searchBar.setText("");
-
-        RequestQueue queue = Volley.newRequestQueue(this);
-
         String url = "https://search.earth911.com/?what="
             + arg + "&where=60048&list_filter=all&max_distance=25&family_id=&latitude=&longitude=&country=&province=&city=&sponsor=";
 

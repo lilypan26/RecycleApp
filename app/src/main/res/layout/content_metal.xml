@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".Metal"
+    android:background="#9AEB9D"
     tools:showIn="@layout/activity_metal">
 
     <LinearLayout
@@ -17,13 +18,13 @@
             android:id="@+id/foodResidue"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Metal Has Food Residue" />
+            android:text="Metal is Clean (No Food Residue, etc.)" />
 
         <Switch
-            android:id="@+id/switch4"
+            android:id="@+id/electronic"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="ElectronicProduct" />
+            android:text="Electronic Product" />
 
         <RadioGroup
             android:id="@+id/metalType"
@@ -88,9 +89,10 @@
                 android:id="@+id/isRecyclable"
                 android:layout_width="match_parent"
                 android:layout_height="349dp"
-                android:textSize="45dp"
                 android:gravity="center"
-                android:text="Recyclable" />
+                android:text="Not Recyclable"
+                android:textSize="45dp"
+                android:visibility="invisible" />
 
         </RadioGroup>
 

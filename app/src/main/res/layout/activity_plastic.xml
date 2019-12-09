@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#9AEB9D"
     tools:context=".Plastic">
 
     <LinearLayout
@@ -15,7 +16,7 @@
             android:id="@+id/foodResidue"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Plastic Has Food Residue" />
+            android:text="Plastic is Clean (No Food Residue, etc.)" />
 
         <RadioGroup
             android:id="@+id/plasticNumber"
@@ -74,9 +75,10 @@
                 android:id="@+id/isRecyclable"
                 android:layout_width="match_parent"
                 android:layout_height="461dp"
-                android:text="Recyclable"
                 android:gravity="center"
-                android:textSize="45dp" />
+                android:text="Recyclable"
+                android:textSize="45dp"
+                android:visibility="invisible" />
         </RadioGroup>
     </LinearLayout>
 
