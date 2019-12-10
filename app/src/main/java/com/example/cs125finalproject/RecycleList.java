@@ -26,6 +26,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import org.json.JSONObject;
+import org.jsoup.Connection;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 
@@ -46,11 +47,11 @@ public class RecycleList extends AppCompatActivity {
         Button paper = findViewById(R.id.paper);
         paper.setOnClickListener(unused -> paper());
         Button plastic = findViewById(R.id.plastic);
-        paper.setOnClickListener(unused -> plastic());
+        plastic.setOnClickListener(unused -> plastic());
         Button metal = findViewById(R.id.metal);
-        paper.setOnClickListener(unused -> metal());
+        metal.setOnClickListener(unused -> metal());
         Button glass = findViewById(R.id.glass);
-        paper.setOnClickListener(unused -> glass());
+        glass.setOnClickListener(unused -> glass());
 
         Button searchButton = findViewById(R.id.searchButton);
         searchButton.setOnClickListener(unused -> search());
@@ -90,6 +91,7 @@ public class RecycleList extends AppCompatActivity {
             doc = Jsoup.connect(url).get();
             String textContents = doc.body().text();
 
+            System.out.println(textContents);
             if (textContents.contains("Curbside") || textContents.contains("curbside")) {
                 isRecyclable.setText("Recyclable");
             }  else {
@@ -97,8 +99,8 @@ public class RecycleList extends AppCompatActivity {
             }
             isRecyclable.setVisibility(View.VISIBLE);
         } catch (IOException e) {
+            System.out.println("asdf");
             Log.e("IOException", e.getMessage());
-
         }
     }
 }
