@@ -2,8 +2,10 @@ package com.example.cs125finalproject;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.RadioGroup;
 import android.widget.Switch;
@@ -17,6 +19,11 @@ public class Plastic extends AppCompatActivity {
         setContentView(R.layout.activity_plastic);
 
         TextView isRecyclable = findViewById(R.id.isRecyclable);
+
+        Button back = findViewById(R.id.back);
+        back.setOnClickListener(unused -> back());
+        Button recycle = findViewById(R.id.recycle);
+        recycle.setOnClickListener(unused -> show());
 
         Switch clean = findViewById(R.id.foodResidue);
         RadioGroup number = findViewById(R.id.plasticNumber);
@@ -50,5 +57,15 @@ public class Plastic extends AppCompatActivity {
         } else {
             isRecyclable.setText("Not Recyclable");
         }
+    }
+    protected void show() {
+        Intent intent = new Intent(this, Statistics.class);
+        //intent.putExtra("check", true);
+        Intent uiIntent = new Intent(this, UI.class);
+        uiIntent.putExtra("check", true);
+        startActivity(uiIntent);
+    }
+    protected void back() {
+        startActivity(new Intent(this, RecycleList.class));
     }
 }

@@ -14,28 +14,36 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
+        <TextView
+            android:id="@+id/select"
+            android:layout_width="match_parent"
+            android:layout_height="53dp"
+            android:text="Select All That Apply:"
+            android:textSize="24dp" />
+
         <Switch
             android:id="@+id/foodResidue"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="42dp"
             android:text="Metal is Clean (No Food Residue, etc.)" />
 
         <Switch
             android:id="@+id/electronic"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="42dp"
             android:text="Electronic Product" />
 
         <RadioGroup
             android:id="@+id/metalType"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" >
+            android:layout_height="wrap_content">
 
             <TextView
                 android:id="@+id/metalText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Type of Metal" />
+                android:text="Type of Metal"
+                android:textSize="19dp" />
 
             <RadioButton
                 android:id="@+id/aluminum"
@@ -85,16 +93,40 @@
                 android:layout_height="wrap_content"
                 android:text="Tin" />
 
-            <TextView
-                android:id="@+id/isRecyclable"
-                android:layout_width="match_parent"
-                android:layout_height="349dp"
-                android:gravity="center"
-                android:text="Not Recyclable"
-                android:textSize="45dp"
-                android:visibility="invisible" />
-
         </RadioGroup>
+
+        <TextView
+            android:id="@+id/isRecyclable"
+            android:layout_width="match_parent"
+            android:layout_height="184dp"
+            android:gravity="center"
+            android:text="Not Recyclable"
+            android:textSize="45dp"
+            android:visibility="invisible" />
+
+        <LinearLayout
+            android:id="@+id/buttons"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/back"
+                android:layout_width="135dp"
+                android:layout_height="wrap_content"
+                android:text="Back" />
+
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <Button
+                android:id="@+id/recycle"
+                android:layout_width="135dp"
+                android:layout_height="wrap_content"
+                android:text="Recycle Item!" />
+        </LinearLayout>
 
     </LinearLayout>
 

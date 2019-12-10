@@ -1,5 +1,6 @@
 package com.example.cs125finalproject;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -9,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.view.View;
+import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -26,6 +28,11 @@ public class Metal extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         TextView isRecyclable = findViewById(R.id.isRecyclable);
+
+        Button back = findViewById(R.id.back);
+        back.setOnClickListener(unused -> back());
+        Button recycle = findViewById(R.id.recycle);
+        recycle.setOnClickListener(unused -> show());
 
         Switch foodResidue = findViewById(R.id.foodResidue);
         Switch electronic = findViewById(R.id.electronic);
@@ -77,5 +84,15 @@ public class Metal extends AppCompatActivity {
         } else {
             isRecyclable.setText("Not Recyclable");
         }
+    }
+    protected void show() {
+        Intent intent = new Intent(this, Statistics.class);
+        //intent.putExtra("check", true);
+        Intent uiIntent = new Intent(this, UI.class);
+        uiIntent.putExtra("check", true);
+        startActivity(uiIntent);
+    }
+    protected void back() {
+        startActivity(new Intent(this, RecycleList.class));
     }
 }
