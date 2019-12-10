@@ -99,7 +99,6 @@ public class RecycleList extends AppCompatActivity {
             }
             isRecyclable.setVisibility(View.VISIBLE);
         } catch (IOException e) {
-            System.out.println("asdf");
             Log.e("IOException", e.getMessage());
         }
     }
