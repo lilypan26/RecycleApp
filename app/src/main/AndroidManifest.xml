@@ -16,7 +16,18 @@
             android:label="@string/title_activity_metal"
             android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity android:name=".Plastic" />
-        <activity android:name=".Paper" />
+        <activity
+            android:name=".Glass"
+            android:label="@string/title_activity_glass"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
+            android:name=".Statistics"
+            android:label="@string/title_activity_statistics"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Paper"
+            android:label="@string/title_activity_paper"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".RecycleList"
             android:label="@string/title_activity_recycle_list"

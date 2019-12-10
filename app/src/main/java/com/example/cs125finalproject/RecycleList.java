@@ -36,6 +36,8 @@ import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
 
+import static android.view.View.GONE;
+
 public class RecycleList extends AppCompatActivity {
 
     @Override
@@ -56,6 +58,9 @@ public class RecycleList extends AppCompatActivity {
         Button searchButton = findViewById(R.id.searchButton);
         searchButton.setOnClickListener(unused -> search());
 
+        Button home = findViewById(R.id.home);
+        home.setOnClickListener(unused -> onClick());
+/*
         FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -64,6 +69,8 @@ public class RecycleList extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+
+ */
     }
     public void paper() {
         startActivity(new Intent(this, Paper.class));
@@ -72,7 +79,7 @@ public class RecycleList extends AppCompatActivity {
         startActivity(new Intent(this, Metal.class));
     }
     public void glass() {
-
+        startActivity(new Intent(this, Glass.class));
     }
     public void plastic() {
         startActivity(new Intent(this, Plastic.class));
@@ -101,5 +108,8 @@ public class RecycleList extends AppCompatActivity {
         } catch (IOException e) {
             Log.e("IOException", e.getMessage());
         }
+    }
+    protected void onClick() {
+        startActivity(new Intent(this, UI.class));
     }
 }

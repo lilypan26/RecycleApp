@@ -1,9 +1,5 @@
 package com.example.cs125finalproject;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.os.Bundle;
-
 import android.content.Intent;
 import android.os.Bundle;
 
@@ -19,13 +15,12 @@ import android.widget.CompoundButton;
 import android.widget.Switch;
 import android.widget.TextView;
 
-public class Paper extends AppCompatActivity {
+public class Glass extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_paper);
-
+        setContentView(R.layout.activity_glass);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         TextView isRecyclable = findViewById(R.id.recyclable);
@@ -38,9 +33,9 @@ public class Paper extends AppCompatActivity {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
                 if (b) {
-                    isRecyclable.setText("Not Recyclable!");
+                    isRecyclable.setText("Recyclable");
                 } else {
-                    isRecyclable.setText("Recyclable!");
+                    isRecyclable.setText("Not Recyclable!");
                 }
             }
         });
@@ -49,7 +44,7 @@ public class Paper extends AppCompatActivity {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
                 if (b) {
-                    isRecyclable.setText("Not Recyclable!");
+                    isRecyclable.setText("Not Recyclable");
                 } else {
                     isRecyclable.setText("Recyclable!");
                 }
@@ -60,13 +55,13 @@ public class Paper extends AppCompatActivity {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
                 if (b) {
-                    isRecyclable.setText("Not Recyclable!");
+                    isRecyclable.setText("Not Recyclable");
                 } else {
                     isRecyclable.setText("Recyclable!");
                 }
             }
         });
-        /*
+/*
         FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -75,7 +70,8 @@ public class Paper extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
-        */
+
+ */
     }
     protected void show() {
         Intent intent = new Intent(this, Statistics.class);

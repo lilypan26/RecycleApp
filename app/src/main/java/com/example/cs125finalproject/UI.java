@@ -11,9 +11,11 @@ import androidx.appcompat.widget.Toolbar;
 
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 public class UI extends AppCompatActivity {
-
+    boolean b = false;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,7 +29,19 @@ public class UI extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
 
         setSupportActionBar(toolbar);
-
+        ImageView star = findViewById(R.id.star);
+        star.setVisibility(View.INVISIBLE);
+        TextView congratulations = findViewById(R.id.congratulations);
+        congratulations.setVisibility(View.GONE);
+        TextView congrats = findViewById(R.id.congrats);
+        congrats.setVisibility(View.GONE);
+        boolean b = getIntent().getBooleanExtra("check", false);
+        if (b) {
+            congrats.setVisibility(View.VISIBLE);
+            star.setVisibility(View.VISIBLE);
+            congratulations.setVisibility(View.VISIBLE);
+        }
+        /*
         FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -36,12 +50,17 @@ public class UI extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+
+         */
     }
 
     protected void onClick() {
         startActivity(new Intent(this, RecycleList.class));
     }
     protected void stats() {
-
+        b = getIntent().getBooleanExtra("check", false);
+        Intent intent = new Intent(this, Statistics.class);
+        intent.putExtra("check", b);
+        startActivity(intent);
     }
 }
