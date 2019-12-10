@@ -24,6 +24,8 @@ public class Paper extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         TextView isRecyclable = findViewById(R.id.recyclable);
+        Button back = findViewById(R.id.back);
+        back.setOnClickListener(unused -> back());
         Button recycle = findViewById(R.id.recycle);
         recycle.setOnClickListener(unused -> show());
         Switch clean = findViewById(R.id.clean);
@@ -31,9 +33,9 @@ public class Paper extends AppCompatActivity {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
                 if (b) {
-                    isRecyclable.setVisibility(View.VISIBLE);
+                    isRecyclable.setText("Not Recyclable!");
                 } else {
-                    isRecyclable.setVisibility(View.GONE);
+                    isRecyclable.setText("Recyclable!");
                 }
             }
         });
@@ -42,9 +44,9 @@ public class Paper extends AppCompatActivity {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
                 if (b) {
-                    isRecyclable.setVisibility(View.GONE);
+                    isRecyclable.setText("Not Recyclable!");
                 } else {
-                    isRecyclable.setVisibility(View.VISIBLE);
+                    isRecyclable.setText("Recyclable!");
                 }
             }
         });
@@ -53,9 +55,9 @@ public class Paper extends AppCompatActivity {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
                 if (b) {
-                    isRecyclable.setVisibility(View.GONE);
+                    isRecyclable.setText("Not Recyclable!");
                 } else {
-                    isRecyclable.setVisibility(View.VISIBLE);
+                    isRecyclable.setText("Recyclable!");
                 }
             }
         });
@@ -71,12 +73,14 @@ public class Paper extends AppCompatActivity {
         */
     }
     protected void show() {
-        UI ui = new UI();
-        ui.showMessage();
-        Statistics stats = new Statistics();
-        stats.update();
-        startActivity(new Intent(this, UI.class));
-
+        Intent intent = new Intent(this, Statistics.class);
+        //intent.putExtra("check", true);
+        Intent uiIntent = new Intent(this, UI.class);
+        uiIntent.putExtra("check", true);
+        startActivity(uiIntent);
+    }
+    protected void back() {
+        startActivity(new Intent(this, RecycleList.class));
     }
 
 }
