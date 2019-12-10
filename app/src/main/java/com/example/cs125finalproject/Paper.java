@@ -1,5 +1,9 @@
 package com.example.cs125finalproject;
 
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.os.Bundle;
+
 import android.content.Intent;
 import android.os.Bundle;
 
@@ -21,6 +25,7 @@ public class Paper extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_paper);
+
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         TextView isRecyclable = findViewById(R.id.recyclable);
@@ -82,5 +87,4 @@ public class Paper extends AppCompatActivity {
     protected void back() {
         startActivity(new Intent(this, RecycleList.class));
     }
-
 }

@@ -21,10 +21,13 @@ public class UI extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ui);
         Button list = findViewById(R.id.enter);
+
         list.setOnClickListener(unused -> onClick());
         Button stats = findViewById(R.id.statsButton);
+
         stats.setOnClickListener(unused -> stats());
         Toolbar toolbar = findViewById(R.id.toolbar);
+
         setSupportActionBar(toolbar);
         ImageView star = findViewById(R.id.star);
         star.setVisibility(View.INVISIBLE);

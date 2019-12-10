@@ -3,14 +3,38 @@ package com.example.cs125finalproject;
 import android.content.Intent;
 import android.os.Bundle;
 
+import com.android.volley.AuthFailureError;
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.Volley;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import org.json.JSONObject;
+import org.jsoup.Connection;
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+
+import java.io.IOException;
+import java.lang.annotation.Documented;
+import java.net.URL;
+import java.util.HashMap;
+import java.util.Map;
 
 import static android.view.View.GONE;
 
@@ -30,6 +54,10 @@ public class RecycleList extends AppCompatActivity {
         metal.setOnClickListener(unused -> metal());
         Button glass = findViewById(R.id.glass);
         glass.setOnClickListener(unused -> glass());
+
+        Button searchButton = findViewById(R.id.searchButton);
+        searchButton.setOnClickListener(unused -> search());
+
         Button home = findViewById(R.id.home);
         home.setOnClickListener(unused -> onClick());
 /*
@@ -48,13 +76,38 @@ public class RecycleList extends AppCompatActivity {
         startActivity(new Intent(this, Paper.class));
     }
     public void metal() {
-
+        startActivity(new Intent(this, Metal.class));
     }
     public void glass() {
         startActivity(new Intent(this, Glass.class));
     }
     public void plastic() {
+        startActivity(new Intent(this, Plastic.class));
+    }
+    protected void search() {
+        EditText searchBar = findViewById(R.id.searchBar);
+        TextView isRecyclable = findViewById(R.id.isRecyclable);
+        String arg = searchBar.getText().toString();
+        arg.replace(" ", "+");
 
+        String url = "https://search.earth911.com/?what="
+            + arg + "&where=60048&list_filter=all&max_distance=25&family_id=&latitude=&longitude=&country=&province=&city=&sponsor=";
+
+        Document doc;
+        try {
+            doc = Jsoup.connect(url).get();
+            String textContents = doc.body().text();
+
+            System.out.println(textContents);
+            if (textContents.contains("Curbside") || textContents.contains("curbside")) {
+                isRecyclable.setText("Recyclable");
+            }  else {
+                isRecyclable.setText("Not Listed in Recyclable Item Database");
+            }
+            isRecyclable.setVisibility(View.VISIBLE);
+        } catch (IOException e) {
+            Log.e("IOException", e.getMessage());
+        }
     }
     protected void onClick() {
         startActivity(new Intent(this, UI.class));
