@@ -10,6 +10,9 @@ layout.
 
 ![Home Screen](https://github.com/lpan8/RecycleApp/blob/master/photos/recycleapp1.PNG)
 
+## Description
+- An app that allows users to determine which items are recyclable and keep track of items recycled.
+
 ## Dependencies
   - [Android Studios](https://developer.android.com/studio)
 
